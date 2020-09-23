@@ -1,122 +1,67 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>我就是我</title><meta name="description"><meta name="author" content="我就是我"><meta name="copyright" content="我就是我"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://0206-day.github.io/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="我就是我"><meta property="og:url" content="http://0206-day.github.io/"><meta property="og:site_name" content="我就是我"><meta property="og:description"><meta property="og:image" content="http://0206-day.github.io/img/avatar.jpg"><meta property="article:published_time" content="2020-09-23T06:56:52.239Z"><meta property="article:modified_time" content="2020-09-23T06:56:52.239Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
-  document.documentElement.setAttribute('data-theme', 'dark')
-  if (document.querySelector('meta[name="theme-color"]') !== null) {
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
-  }
-}
-var activateLightMode = function () {
-  document.documentElement.setAttribute('data-theme', 'light')
-  if (document.querySelector('meta[name="theme-color"]') !== null) {
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
-  }
-}
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="description" content=""><meta name="keyword"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>GARY.SHEN</title><link rel="shortcut icon" href="/images/avatar.png" type="image/x-icon"><link href="/styles/site.css" rel="stylesheet"><meta name="generator" content="Hexo 5.2.0"></head><body><header class="container" id="header"><div class="header"><div class="header-left"><div class="avatar"><img src="/images/avatar.png"></div><div class="author"><div class="author-name"><a href="/">GARY.SHEN</a></div><div class="about-me">Halo~</div></div></div><div class="header-right"><ul class="navigation"><li><a href="/archives">归档</a></li></ul></div><div class="about-me-mask"><div class="about-me-wrap"><div class="about-me__header"><div class="avatar"><img src="/images/avatar.png"></div></div><ul class="socials"><li class="social-item"><span class="label"><img src="/images/socials/github.svg" alt="https://github.com/gary-Shen"></span><a href="https://github.com/gary-Shen" target="_blank" title="https://github.com/gary-Shen">https://github.com/gary-Shen</a></li><li class="social-item"><span class="label"><img src="/images/socials/email.svg" alt="guanlinshen@126.com"></span><span>guanlinshen@126.com</span></li><li class="social-item"><span class="label"><img src="/images/socials/wechat.svg" alt="Grinson"></span><span>Grinson</span></li></ul></div></div></div></header><div class="container home"><section class="article"><a class="title" href="/2020/09/23/hello-world/">Hello World</a><div class="content excerpt"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-var getCookies = function (name) {
-  const value = `; ${document.cookie}`
-  const parts = value.split(`; ${name}=`)
-  if (parts.length === 2) return parts.pop().split(';').shift()
-}
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-var autoChangeMode = 'false'
-var t = getCookies('theme')
-if (autoChangeMode === '1') {
-  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-  if (t === undefined) {
-    if (isLightMode) activateLightMode()
-    else if (isDarkMode) activateDarkMode()
-    else if (isNotSpecified || hasNoSupport) {
-      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
-      var now = new Date()
-      var hour = now.getHours()
-      var isNight = hour <= 6 || hour >= 18
-      isNight ? activateDarkMode() : activateLightMode()
-    }
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-      if (Cookies.get('theme') === undefined) {
-        e.matches ? activateDarkMode() : activateLightMode()
-      }
-    })
-  } else if (t === 'light') activateLightMode()
-  else activateDarkMode()
-} else if (autoChangeMode === '2') {
-  now = new Date()
-  hour = now.getHours()
-  isNight = hour <= 6 || hour >= 18
-  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-  else if (t === 'light') activateLightMode()
-  else activateDarkMode()
-} else {
-  if (t === 'dark') activateDarkMode()
-  else if (t === 'light') activateLightMode()
-}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  hexoversion: '5.2.0',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  bookmark: {
-    message_prev: '按',
-    message_next: '键将本页加入书签'
-  },
-  runtime_unit: '天',
-  runtime: false,
-  copyright: undefined,
-  ClickShowText: undefined,
-  medium_zoom: false,
-  fancybox: true,
-  Snackbar: undefined,
-  justifiedGallery: {
-    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
-    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
-  },
-  baiduPush: false,
-  highlightCopy: true,
-  highlightLang: true,
-  isPhotoFigcaption: false,
-  islazyload: true,
-  isanchor: false    
-}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isSidebar: false,
-  postUpdate: '2020-09-23 14:56:52'
-}</script><noscript><style>
-#nav {
-  opacity: 1
-}
-.justified-gallery img {
-  opacity: 1
-}
-</style></noscript><meta name="generator" content="Hexo 5.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">2</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">1</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://i.loli.net/2020/05/01/IuWi8QbHvzjlOPw.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">我就是我</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">我就是我</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/0206-day" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/1181540544@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/23/hello-world/" title="Hello World">     <img class="post_bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/23/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-23T04:40:40.945Z" title="发表于 2020-09-23 12:40:40">2020-09-23</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-More info: Writing
-Run server1$ hexo server
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+</div><div class="tags"></div><div class="article-footer"><a class="excerpt-link" href="/2020/09/23/hello-world/">全文...</a><div class="article-footer__right"><span class="date">写于2020年09月23日</span></div></div></section><section class="article"><a class="title" href="/2020/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">计算机系统基础概念</a><div class="content excerpt"><h4 id="信息就是位-上下文"><a href="#信息就是位-上下文" class="headerlink" title="信息就是位+上下文"></a>信息就是位+上下文</h4><p>拿一个C语言程序文本文件来解释【信息就是位+上下文】，C语言文件我们也可以称之为源文件或源程序，<strong>源文件是由0和1组成的位序列(又称比特序列，每8位为一组，称为字节。每个字节代表源文件中的某些字符。</strong></p>
+<p>用ASCII标准(美国信息转换标准代码)表示其文本文件的内容如下图所示</p>
+<p><img src="/images/2020-09-23/hello.c%E7%9A%84ASCII%E6%96%87%E6%9C%AC%E8%A1%A8%E7%A4%BA.png" alt="lALPGo_k6qhIq8vNAzrNBcs_1483_826.png"></p>
+<p>每个字符都有与之对应的十进制数，但是计算机只认识二进制数，比如我们知道“105”在ASCII标准中代表“i”字符，但是计算机所识别的“i”字符是这样的“0100 0101”也就是将“105”转换成二进制数。</p>
+<p>在不同的编码中诸如ISO8859-1、GB2312、GBK等等，“i”字符可能又有不同的表示，因为每个人都可以定义一套自己的编码规范这些个不同的编码也可以称之为上下文，就好比美国的上下文是ASCII那么十进制数“105”就代表“i”字符，中国的上下文是GB2312那么“i”标签可能就用另一种方式来表示了。</p>
+<h4 id="程序被其它程序翻译成不同的格式"><a href="#程序被其它程序翻译成不同的格式" class="headerlink" title="程序被其它程序翻译成不同的格式"></a>程序被其它程序翻译成不同的格式</h4><p>一个用C语言编写的程序文件要想在操作系统上运行起来，需要经过一系列其他程序的处理，最终变成计算机可以识别的程序也就是机器语言指令，然后这种指令再被一种称为可执行目标程序(又称目标文件)的格式打包，并以二进制磁盘文件的形式存放起来。</p>
+<p>一个C语言程序文件通过GCC编译器驱动程序翻译成可执行目标文件，这个过程需要四个阶段来完成，执行这四个阶段的程序(预<strong>处理器、编译器、汇编器、链接器)一起构成了编译系统</strong>(compilation system)。</p>
+<p><strong>编译系统要做事就是你想用C语言告诉计算机你要输出打印“Hello，World！”，然后编译系统再按照你的意思跟计算机解释你要干什么，编译系统相当于一个“翻译员”，这样计算机懂了它才会开始工作。</strong></p>
+<p><img src="/images/2020-09-23/%E7%BC%96%E8%AF%91%E7%B3%BB%E7%BB%9F.png" alt="lALPGo_k6qhIq8vNAzrNBcs_1483_826.png"></p>
+<p><strong>预处理阶段：</strong>预处理器(cpp)根据以字符#开头的命令，修改原始的C程序。比如hello.c的第一行#incliude&lt;stdio.h&gt;命令告诉预处理器读取系统头文件stdio.h的内容，并把它直接插入你的程序文本中。结果就得到了另一个C程序，通常以.i作为文件扩展名。</p>
+<p><strong>编译阶段：</strong>编译器(ccl)将hello.i为扩展名的文本文件翻译成文本文件hello.s，它包含一个汇编语言程序。该程序包含函数main的定义，如下所示：</p>
+<p><img src="/images/2020-09-23/%E7%BC%96%E8%AF%91%E9%98%B6%E6%AE%B5%E7%9A%84%E6%B1%87%E7%BC%96%E7%A0%81.png" alt="lALPGo_k6qhIq8vNAzrNBcs_1483_826.png"></p>
+<p>定义中2~7行的每一条语句都以一种文本格式描述了一条低级的机器语言指令，汇编语言是非常有用的，因为它为不同高级语言的不同编译器提供了通用的输出语言。类如C语言和Fortran编译器产生的输出文件用的都是一样的汇编语言。</p>
+<p><strong>汇编阶段：</strong>汇编器(as)将hello.s文件翻译成机器语言指令，把这些指令打包成一种叫做可重定位目标程序(relocatable object program)的格式，并将结果保存在目标文件hello.o文件中。hello.o文件一个二进制文件，它包含的17个字节是函数main的指令编码。</p>
+<p><strong>链接阶段：</strong>hello.c程序中用到了printf函数，它是每个C编译器都提供的标准C库中的一个函数。printf函数存在于一个名为printf.o的单独的预编译好了的目标文件中，而这个文件必须以某种方式合并到hello.o程序中。连接器(ld)就负责处理这种合并。结果就到hello文件中，它是一个可执行目标文件(或者又称为可执行文件)，可以被加载到内存中，由系统执行。</p>
+<h4 id="了解编译系统如何工作的好处"><a href="#了解编译系统如何工作的好处" class="headerlink" title="了解编译系统如何工作的好处"></a>了解编译系统如何工作的好处</h4><p>优化程序性能、理解链接时出现的错误、避免安全漏洞</p>
+<h4 id="系统的硬件组成"><a href="#系统的硬件组成" class="headerlink" title="系统的硬件组成"></a>系统的硬件组成</h4><p><img src="/images/2020-09-23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90.png" alt="lALPGo_k6qhIq8vNAzrNBcs_1483_826.png"></p>
+<p><strong>总线</strong>：所有硬件的通信管道，总线分为、系统总线、内存总线、I/O总线</p>
+<p><strong>I/O(输入/输出)设备</strong>：用于控制和显示计算机行为</p>
+<p><strong>主存</strong>：用于存放CPU即将执行的程序以及程序的相关数据</p>
+<p><strong>处理器(CPU)：</strong>计算机的大脑，给整个计算机系统下发命令</p>
+<h4 id="运行一个程序"><a href="#运行一个程序" class="headerlink" title="运行一个程序"></a>运行一个程序</h4><p>当使用命令运行一个C语言程序时计算机都做了那些工作？</p>
+<p><img src="/images/2020-09-23/%E4%BB%8E%E7%94%B5%E8%84%91%E4%B8%8A%E8%AF%BB%E5%8F%96hello%E5%91%BD%E4%BB%A4.png" alt="2020-08-15_161524.png"></p>
+<p>利用直接存储器存取(AMD)技术，数据可以不通过处理器而直接从磁盘到达主存</p>
+<p><img src="/images/2020-09-23/%E4%BB%8E%E7%A3%81%E7%9B%98%E4%B8%8A%E5%8A%A0%E8%BD%BD%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6.png" alt="2020-08-15_162502.png"></p>
+<h4 id="高速缓存至关重要"><a href="#高速缓存至关重要" class="headerlink" title="高速缓存至关重要"></a>高速缓存至关重要</h4><p>从上面运行一个程序的例子可以看出，系统花费了大量的时间把信息从一个地方挪到另一个地方，减慢了程序“真正”的工作，所以系统设计的一个主要目标就是使这些复制(挪移)操作尽快地完成。</p>
+<p>根据机械原理，较大的存储设备要比较小的存储设备运行慢，一个典型系统上的磁盘驱动器比主存要大1000倍，但是对处理器而言，从磁盘上读数据的开销要比从主存中读大1000万倍。</p>
+<p>类似的，一个典型的寄存器文件只存储几百字节的信息，而主存里可以存放几十亿个字节，然而处理器从寄存器中读数据比从主存中读快100倍，更麻烦的是加快处理器的运行速度比加快主存的运行速度要容易和便宜的多。</p>
+<p>针对这种处理器与主存之间的差异，系统设计者采用了更小更快的存储设备，高速缓存存储器(cahce memory,简称高速缓存)，作为暂时的集结区域，存放处理器近期可能会需要的信息，处理器访问高速缓存的速度几乎和访问寄存器一样。</p>
+<p><img src="/images/2020-09-23/%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E5%AD%98%E5%82%A8%E5%99%A8.png" alt="2020-08-15_162502.png"></p>
+<p>意识到高速缓存存储器存在的应用程序员能够利用高速缓存将程序的性能提高一个数量级</p>
+<h4 id="存储设备形成层次结构"><a href="#存储设备形成层次结构" class="headerlink" title="存储设备形成层次结构"></a>存储设备形成层次结构</h4><p><img src="G:\blog\blog\source\images\2020-9-23\存储器层次结构.png" alt="2020-08-15_162502.png"></p>
+<h4 id="操作系统管理硬件"><a href="#操作系统管理硬件" class="headerlink" title="操作系统管理硬件"></a>操作系统管理硬件</h4><p>当shell加载和运行hell程序时，以及hello程序输出消息时，shell和hello程序都没有直接访问键盘、显示器、磁盘或者内存，反而它们依靠的是操作系统提供的服务。我们可以把操作系统看成是应用程序和硬件之间插入的一层软件，所有有应用程序对硬件的操作尝试都必须通过操作系统</p>
+<p><img src="/images/2020-09-23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%88%86%E5%B1%82%E8%A7%86%E5%9B%BE.png" alt="2020-08-15_174619.png"></p>
+<p>操作系统有两个基本功能：(1)防止硬件被失控的应用程序滥用，(2)向应用程序提供简单一致的机制来控制复杂且通常又大不相同的低级硬件设备。操作系统通过几个抽象的概念(进程、虚拟内存和文件)来实现这两个功能，文件是对I/O设备的表示，虚拟内存是对主存和磁盘I/O设备的抽象表示，进程则是对处理器、主存和I/O设备的抽象表示。</p>
+<p><img src="/images/2020-09-23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%8F%90%E4%BE%9B%E7%9A%84%E6%8A%BD%E8%B1%A1%E8%A1%A8%E7%A4%BA.png" alt="2020-08-15_174619.png"></p>
+<h4 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h4><p><img src="/images/2020-09-23/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.png" alt="2020-08-17_104822.png"></p>
+<p>每个进程都会分配自己的内核虚拟内存，内核虚拟内存负责保存进程断点以及进程需要通过内核部分和计算机硬件进行交互，计算机硬件也需要经过内核虚拟内存解析虚拟内存中的用户数据</p>
+<h4 id="系统之间利用网络通信"><a href="#系统之间利用网络通信" class="headerlink" title="系统之间利用网络通信"></a>系统之间利用网络通信</h4><p>带有网络适配器的计算机基本结构图</p>
+<p><img src="/images/2020-09-23/%E7%BD%91%E7%BB%9CIO%E8%AE%BE%E5%A4%87.png" alt="2020-08-17_104822.png"></p>
+<p>系统之间利用网路通信的大致流程图</p>
+<p><img src="/images/2020-09-23/%E5%88%A9%E7%94%A8telnet%E8%BF%9C%E7%A8%8B%E8%BF%90%E8%A1%8Chello.png" alt="2020-08-17_104822.png"></p>
+<h4 id="阿姆达尔定律-Amdahl"><a href="#阿姆达尔定律-Amdahl" class="headerlink" title="阿姆达尔定律(Amdahl)"></a>阿姆达尔定律(Amdahl)</h4><p>阿姆达尔定律理解就是要想使某个要求效率的结构真正的提升要是全局的提升，而不是局部的提升</p>
+</div><div class="tags"><a class="tag-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></div><div class="article-footer"><a class="excerpt-link" href="/2020/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">全文...</a><div class="article-footer__right"><span class="date">写于2020年08月27日</span></div></div></section></div><div id="backToTop"><div class="back-arrow back-arrow-left"></div><div class="back-arrow back-arrow-right"></div></div><footer class="container"><div class="rights"><span>Powered by </span><a href="http://hexo.io" target="_blank">Hexo</a><span>, Theme </span><a href="https://github.com/gary-Shen/hexo-theme-bear" target="_blank">Bear</a><span>.</span></div></footer>
+<script src="/script/jquery.min.js"></script>
 
-More info: Server
-Generate static files1$ hexo generate
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
-More info: Generating
-Deploy to remote sites1$ hexo deploy
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 
-More info: Deployment
-</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" title="计算机系统基础概念">     <img class="post_bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机系统基础概念"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" title="计算机系统基础概念">计算机系统基础概念</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-27T10:00:00.000Z" title="发表于 2020-08-27 18:00:00">2020-08-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/">深入理解计算机系统</a></span></div><div class="content">信息就是位+上下文拿一个C语言程序文本文件来解释【信息就是位+上下文】，C语言文件我们也可以称之为源文件或源程序，源文件是由0和1组成的位序列(又称比特序列，每8位为一组，称为字节。每个字节代表源文件中的某些字符。
-用ASCII标准(美国信息转换标准代码)表示其文本文件的内容如下图所示
-
-每个字符都有与之对应的十进制数，但是计算机只认识二进制数，比如我们知道“105”在ASCII标准中代表“i”字符，但是计算机所识别的“i”字符是这样的“0100 0101”也就是将“105”转换成二进制数。
-在不同的编码中诸如ISO8859-1、GB2312、GBK等等，“i”字符可能又有不同的表示，因为每个人都可以定义一套自己的编码规范这些个不同的编码也可以称之为上下文，就好比美国的上下文是ASCII那么十进制数“105”就代表“i”字符，中国的上下文是GB2312那么“i”标签可能就用另一种方式来表示了。
-程序被其它程序翻译成不同的格式一个用C语言编写的程序文件要想在操作系统上运行起来，需要经过一系列其他程序的处理，最终变成计算机可以识别的程序也就是机器语言指令，然后这种指令再被一种称为可执行目标 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">我就是我</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">2</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">1</div></a></div><div class="card-info-data-item is-center"><a href="/categories"><div class="headline">分类</div><div class="length_num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/0206-day" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/1181540544@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/09/23/hello-world/" title="Hello World"><img class="aside-post-bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/09/23/hello-world/" title="Hello World">Hello World</a><time class="aside-post_meta post-meta-date" datetime="2020-09-23T04:40:40.945Z" title="发表于 2020-09-23 12:40:40">2020-09-23</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" title="计算机系统基础概念"><img class="aside-post-bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机系统基础概念"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" title="计算机系统基础概念">计算机系统基础概念</a><time class="aside-post_meta post-meta-date" datetime="2020-08-27T10:00:00.000Z" title="发表于 2020-08-27 18:00:00">2020-08-27</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">深入理解计算机系统</span><span class="card-category-list-count">1</span></a></li>
-                       
-            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 16px; color: #999">学习笔记</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">1</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">2</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By 我就是我</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script></div></body></html>
+<script src="/script/index.js"></script>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-61220413-1', 'auto');
+ga('send', 'pageview');</script></body></html>
